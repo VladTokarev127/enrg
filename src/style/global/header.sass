@@ -1,0 +1,294 @@
+.header
+	background-color: #fff
+	position: relative
+	z-index: 9
+	&__top
+		padding-top: 12px
+		padding-bottom: 24px
+		border-bottom: 1px solid #f6f6f6
+		@include media-breakpoint-down(lg)
+			padding-bottom: 12px
+	&__logo
+		display: flex
+		align-items: center
+		margin-right: auto
+		text-decoration: none
+		&-img
+			font-size: 0
+			margin-right: 25px
+		&-text
+			font-size: 14px
+			line-height: 120%
+			color: #727272
+			@include media-breakpoint-down(xs)
+				display: none
+	&__info
+		display: flex
+		align-items: flex-start
+		margin-right: 48px
+		@include media-breakpoint-down(xl)
+			display: none
+		&-item
+			margin-right: 48px
+			display: flex
+		&-icon
+			font-size: 0
+			margin-right: 12px
+			width: 48px
+			flex: 0 48px
+		&-content
+			flex: 1
+			padding-top: 14px
+		&-title
+			margin-bottom: 8px
+			font-size: 16px
+			font-weight: 600
+			color: #373737
+		&-text
+			font-size: 14px
+			color: #727272
+	&__contacts
+		text-align: right
+		@include media-breakpoint-down(lg)
+			display: none
+	&__tel
+		font-size: 24px
+		margin-bottom: 8px
+		font-weight: 600
+		a
+			color: #373737
+			text-decoration: none
+			transition: .3s ease-in-out
+			&:hover,
+			&:focus-visible
+				color: #ffb841
+	&__all
+		position: relative
+		&-link
+			position: relative
+			padding-left: 24px
+			font-size: 16px
+			color: #727272
+			text-decoration: none
+			transition: .3s ease-in-out
+			&:hover,
+			&:focus-visible
+				color: #ffb841
+			&.is-active
+				&::after
+					transform: translate(0,-50%) rotate(180deg)
+			&::after
+				position: absolute
+				left: 0
+				top: 50%
+				transform: translate(0,-50%)
+				content: ''
+				width: 24px
+				height: 24px
+				background-image: url(../img/arrow-menu.svg)
+				background-repeat: no-repeat
+				background-position: center
+				transition: .3s ease-in-out
+		&-list
+			display: none
+			position: absolute
+			right: 0
+			top: calc(100% + 10px)
+			margin: 0
+			padding: 0
+			list-style-type: none
+			padding: 10px
+			background-color: #fff
+			border: 1px solid #f6f6f6
+			li
+				margin-bottom: 8px
+				font-size: 18px
+				font-weight: 600
+				&:last-child
+					margin-bottom: 0
+			a
+				color: #373737
+				text-decoration: none
+				transition: .3s ease-in-out
+				&:hover,
+				&:focus-visible
+					color: #ffb841
+	&__bottom
+		padding-top: 24px
+		padding-bottom: 24px
+		@include media-breakpoint-down(lg)
+			display: none
+	&__btn
+		margin-right: 82px
+		@include media-breakpoint-down(xl)
+			margin-right: 50px
+		@include media-breakpoint-down(lg)
+			margin-right: 0
+			margin-bottom: 20px
+			flex: 1 100%
+	&__nav
+		margin-right: auto
+		@include media-breakpoint-down(xl)
+			margin-right: 50px
+		ul
+			display: flex
+			align-items: center
+			margin: 0
+			padding: 0
+			list-style-type: none
+			@include media-breakpoint-down(lg)
+				display: block
+		li
+			font-size: 16px
+			font-weight: 600
+			margin-right: 54px
+			@include media-breakpoint-down(lg)
+				margin-right: 0
+				margin-bottom: 20px
+				font-size: 18px
+			&:last-child
+				margin-right: 0
+				margin-bottom: 0
+			&.current-menu-item
+				a::after
+					opacity: 1
+		a
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			padding: 14px 9px 18px
+			position: relative
+			color: #292929
+			text-decoration: none
+			transition: .3s ease-in-out
+			@include media-breakpoint-down(lg)
+				display: inline-flex
+			&:hover,
+			&:focus-visible
+				color: #ffb841
+			&::after
+				position: absolute
+				left: 0
+				bottom: 0
+				content: ''
+				width: 100%
+				height: 1px
+				background-color: #000
+				opacity: 0
+	&__search
+		display: flex
+		align-items: center
+		flex: 0 522px
+		position: relative
+		@include media-breakpoint-down(xl)
+			flex: 1
+		@include media-breakpoint-down(lg)
+			flex: 1 100%
+			margin-bottom: 20px
+		input
+			width: 100%
+			height: 52px
+			padding: 0 24px
+			padding-right: 72px
+			border: 0
+			background: 0
+			font-family: inherit
+			font-size: 14px
+			color: #727272
+		&-btn
+			position: absolute
+			right: 0
+			top: 0
+			height: 52px
+			width: 52px
+			display: flex
+			align-items: center
+			justify-content: center
+			text-align: center
+			border: 0
+			background-color: #ffb841
+			border-radius: 8px
+			cursor: pointer
+			transition: .3s ease-in-out
+			&:hover,
+			&:focus-visible
+				background-color: #e04d4d
+	&__menu
+		align-self: center
+		margin-left: 30px
+		width: 45px
+		height: 45px
+		padding: 0
+		display: none
+		align-items: center
+		justify-content: center
+		text-align: center
+		text-decoration: none
+		transition: .3s ease-in-out
+		background: #FFB841
+		border-radius: 50%
+		border: 0
+		cursor: pointer
+		@include media-breakpoint-down(lg)
+			display: flex
+		&:hover,
+		&:focus-visible,
+		&.is-active
+			background-color: #FFC700
+		&.is-active
+			span
+				background: transparent
+				transform: rotate(90deg)
+				&::before
+					transform: rotate(45deg)
+					top: 0
+					background-color: #fff
+				&::after
+					transform: rotate(-45deg)
+					bottom: 0
+					background-color: #fff
+		span
+			display: block
+			position: relative
+			width: 25px
+			height: 3px
+			transition: .3s
+			background-color: #fff
+			&::before,&::after
+				content: ''
+				display: block
+				width: 25px
+				height: 3px
+				background: #fff
+				position: absolute
+				left: 0px
+				transition: all 0.3s linear
+			&::before
+				top: -8px
+			&::after
+				bottom: -8px
+	&__mobile
+		display: none
+		@include media-breakpoint-down(lg)
+			display: block
+			position: absolute
+			right: -290px
+			top: 100%
+			width: 290px
+			background-color: #fff
+			height: calc(100vh - 100%)
+			padding-top: 20px
+			padding-bottom: 20px
+			overflow: auto
+			transition: .3s ease-in-out
+			opacity: 0
+			visibility: hidden
+			&.is-active
+				opacity: 1
+				visibility: visible
+				right: 0
+		.header__contacts
+			display: block
+			margin-left: auto
+			margin-bottom: 20px

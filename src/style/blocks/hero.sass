@@ -1,0 +1,85 @@
+.hero
+	position: relative
+	z-index: 1
+	padding-top: 84px
+	padding-bottom: 24px
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	&::after
+		position: absolute
+		z-index: -1
+		left: 0
+		top: 0
+		content: ''
+		width: 100%
+		height: 100%
+		background-color: rgba(#161616, .56)
+	&__suptitle
+		flex: 1 100%
+		text-align: center
+		margin-bottom: 16px
+		color: #fff
+		font-size: 24px
+		@include media-breakpoint-down(sm)
+			font-size: 18px
+	&__title
+		margin-bottom: 53px
+		flex: 1 100%
+		text-align: center
+		font-size: 52px
+		font-weight: 600
+		line-height: 1.4
+		color: #fff
+		@include media-breakpoint-down(sm)
+			font-size: 38px
+	&__btn
+		box-shadow: 4px 6px 24px rgba(224, 77, 77, 0.65)
+		padding: 24px 48px
+		font-size: 18px
+		&:hover,
+		&:focus-visible
+			box-shadow: 4px 6px 24px rgba(#FFB841, 0.65)
+		&-wrapper
+			flex: 1 100%
+			display: flex
+			justify-content: center
+			margin-bottom: 132px
+	&__grid
+		flex: 1 100%
+		background: #FFFFFF
+		box-shadow: 13px 11px 105px rgba(157, 157, 157, 0.25)
+		border-radius: 8px
+		padding-bottom: 44px
+		padding-left: 70px
+		padding-right: 70px
+		display: grid
+		grid-template-columns: repeat(4,1fr)
+		grid-gap: 40px 111px
+		@include media-breakpoint-down(lg)
+			grid-template-columns: repeat(2,1fr)
+			grid-gap: 64px
+		@include media-breakpoint-down(sm)
+			padding-left: 15px
+			padding-right: 15px
+		@include media-breakpoint-down(xs)
+			grid-template-columns: repeat(1,1fr)
+	&__item
+		&-icon
+			margin-top: -26px
+			margin-bottom: 24px
+			width: 52px
+			height: 52px
+			display: flex
+			align-items: center
+			justify-content: center
+			background: #FFB841
+			border-radius: 8px
+		&-content
+		&-title
+			margin-bottom: 8px
+			font-weight: 600
+			color: #373737
+		&-text
+			font-size: 14px
+			color: #727272
